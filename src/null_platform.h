@@ -49,6 +49,7 @@ typedef struct _GLFWwindowNull
     GLFWbool        resizable;
     GLFWbool        decorated;
     GLFWbool        floating;
+    GLFWbool        titlebar;
     GLFWbool        transparent;
     float           opacity;
 } _GLFWwindowNull;
@@ -108,6 +109,7 @@ int _glfwFramebufferTransparentNull(_GLFWwindow* window);
 void _glfwSetWindowResizableNull(_GLFWwindow* window, GLFWbool enabled);
 void _glfwSetWindowDecoratedNull(_GLFWwindow* window, GLFWbool enabled);
 void _glfwSetWindowFloatingNull(_GLFWwindow* window, GLFWbool enabled);
+void _glfwSetWindowTitlebarNull(_GLFWwindow* window, GLFWbool enabled);
 void _glfwSetWindowMousePassthroughNull(_GLFWwindow* window, GLFWbool enabled);
 float _glfwGetWindowOpacityNull(_GLFWwindow* window);
 void _glfwSetWindowOpacityNull(_GLFWwindow* window, float opacity);

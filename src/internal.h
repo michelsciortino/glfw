@@ -403,6 +403,7 @@ struct _GLFWwndconfig
     GLFWbool      decorated;
     GLFWbool      focused;
     GLFWbool      autoIconify;
+    GLFWbool      titlebar;
     GLFWbool      floating;
     GLFWbool      maximized;
     GLFWbool      centerCursor;
@@ -527,6 +528,7 @@ struct _GLFWwindow
     GLFWbool            decorated;
     GLFWbool            autoIconify;
     GLFWbool            floating;
+    GLFWbool            titlebar;
     GLFWbool            focusOnShow;
     GLFWbool            mousePassthrough;
     GLFWbool            shouldClose;
@@ -559,6 +561,7 @@ struct _GLFWwindow
         GLFWwindowrefreshfun      refresh;
         GLFWwindowfocusfun        focus;
         GLFWwindowiconifyfun      iconify;
+        GLFWtitlebarhittestfun    tbhittest;
         GLFWwindowmaximizefun     maximize;
         GLFWframebuffersizefun    fbsize;
         GLFWwindowcontentscalefun scale;
@@ -733,6 +736,7 @@ struct _GLFWplatform
     void (*setWindowResizable)(_GLFWwindow*,GLFWbool);
     void (*setWindowDecorated)(_GLFWwindow*,GLFWbool);
     void (*setWindowFloating)(_GLFWwindow*,GLFWbool);
+    void (*setWindowTitlebar)(_GLFWwindow*, GLFWbool);
     void (*setWindowOpacity)(_GLFWwindow*,float);
     void (*setWindowMousePassthrough)(_GLFWwindow*,GLFWbool);
     void (*pollEvents)(void);
@@ -909,6 +913,7 @@ void _glfwInputFramebufferSize(_GLFWwindow* window, int width, int height);
 void _glfwInputWindowContentScale(_GLFWwindow* window,
                                   float xscale, float yscale);
 void _glfwInputWindowIconify(_GLFWwindow* window, GLFWbool iconified);
+void _glfwInputTitleBarHitTest(_GLFWwindow* window, int posX, int posY, int* hit);
 void _glfwInputWindowMaximize(_GLFWwindow* window, GLFWbool maximized);
 void _glfwInputWindowDamage(_GLFWwindow* window);
 void _glfwInputWindowCloseRequest(_GLFWwindow* window);

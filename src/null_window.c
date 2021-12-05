@@ -92,6 +92,7 @@ static int createNativeWindow(_GLFWwindow* window,
     window->null.decorated = wndconfig->decorated;
     window->null.maximized = wndconfig->maximized;
     window->null.floating = wndconfig->floating;
+    window->null.titlebar = wndconfig->titlebar;
     window->null.transparent = fbconfig->transparent;
     window->null.opacity = 1.f;
 
@@ -370,6 +371,11 @@ void _glfwSetWindowResizableNull(_GLFWwindow* window, GLFWbool enabled)
 void _glfwSetWindowDecoratedNull(_GLFWwindow* window, GLFWbool enabled)
 {
     window->null.decorated = enabled;
+}
+
+void _glfwSetWindowTitlebarNull(_GLFWwindow* window, GLFWbool enabled)
+{
+  window->null.titlebar = enabled;
 }
 
 void _glfwSetWindowFloatingNull(_GLFWwindow* window, GLFWbool enabled)

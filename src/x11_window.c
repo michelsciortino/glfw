@@ -2704,6 +2704,11 @@ void _glfwSetWindowFloatingX11(_GLFWwindow* window, GLFWbool enabled)
     XFlush(_glfw.x11.display);
 }
 
+void _glfwPlatformSetWindowTitlebar(_GLFWwindow* window, GLFWbool enabled) {
+    _glfwInputError(GLFW_FEATURE_UNIMPLEMENTED,
+                      "X11: Window attribute setting not implemented yet");
+}
+
 void _glfwSetWindowMousePassthroughX11(_GLFWwindow* window, GLFWbool enabled)
 {
     if (!_glfw.x11.xshape.available)

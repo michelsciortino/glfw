@@ -1132,6 +1132,12 @@ void _glfwSetWindowFloatingWayland(_GLFWwindow* window, GLFWbool enabled)
                     "Wayland: Window attribute setting not implemented yet");
 }
 
+void _glfwPlatformSetWindowTitlebar(_GLFWwindow* window, GLFWbool enabled) {
+    // TODO
+    _glfwInputError(GLFW_FEATURE_UNIMPLEMENTED,
+                    "Wayland: Window attribute setting not implemented yet");
+}
+
 void _glfwSetWindowMousePassthroughWayland(_GLFWwindow* window, GLFWbool enabled)
 {
     if (enabled)
